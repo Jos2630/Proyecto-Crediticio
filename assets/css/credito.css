@@ -1,0 +1,35 @@
+:root { --azul-oscuro: #0b2a5b; --azul: #1769ff; --fondo: #f1f5fb; }
+body { background: var(--fondo); color: #1e293b; font-family: 'Segoe UI', system-ui, sans-serif; }
+
+.topbar { position: fixed; inset: 0 0 auto 0; height: 60px; z-index: 1030; background: var(--azul-oscuro);
+          color: #fff; display: flex; align-items: center; gap: 1rem; padding: 0 1.25rem; }
+.sidebar { position: fixed; top: 60px; bottom: 0; left: 0; width: 230px; z-index: 1020;
+           background: var(--azul-oscuro); padding: 1rem .75rem; overflow-y: auto; transition: transform .2s; }
+.sidebar a { display: flex; align-items: center; gap: .75rem; padding: .6rem .85rem; margin-bottom: .15rem;
+             color: #cfd9ee; text-decoration: none; border-radius: .4rem; font-size: .95rem; }
+.sidebar a:hover { background: rgba(255,255,255,.08); color: #fff; }
+.sidebar a.activo { background: var(--azul); color: #fff; }
+.contenido { margin-left: 230px; padding: 84px 1.75rem 2rem; }
+@media (max-width: 991.98px) {
+    .sidebar { transform: translateX(-100%); }
+    body.menu-abierto .sidebar { transform: none; }
+    .contenido { margin-left: 0; padding-inline: 1rem; }
+}
+
+.tarjeta { background: #fff; border: 1px solid #e3e9f3; border-radius: .75rem; box-shadow: 0 1px 3px rgba(15,35,80,.06); margin-bottom: 1.5rem; }
+.tarjeta > .tarjeta-titulo { display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+                             padding: .9rem 1.25rem; font-weight: 600; border-bottom: 1px solid #edf1f8; }
+.tarjeta > .tarjeta-cuerpo { padding: 1.25rem; }
+
+.dato-etiqueta { font-size: .78rem; color: #64748b; text-transform: uppercase; letter-spacing: .03em; }
+.dato-valor { font-weight: 600; }
+
+.kpi { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; }
+.kpi .icono { width: 48px; height: 48px; border-radius: .6rem; display: grid; place-items: center; font-size: 1.5rem; }
+.kpi .numero { font-size: 1.6rem; font-weight: 700; line-height: 1; }
+.kpi.azul .icono { background: #e4eeff; color: #1769ff; }
+.kpi.verde .icono { background: #dff6e7; color: #1f9d55; }
+.kpi.naranja .icono { background: #ffeed9; color: #e8890c; }
+.kpi.morado .icono { background: #ece6ff; color: #6d4ae0; }
+
+.table > :not(caption) > * > * { vertical-align: middle; }
