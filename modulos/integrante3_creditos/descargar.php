@@ -6,7 +6,7 @@ $st->execute([(int)($_GET['id'] ?? 0)]);
 $doc = $st->fetch();
 
 $base    = realpath(carpeta_garantias());
-$archivo = $doc ? realpath(RAIZ_PROYECTO . '/' . $doc['ruta_archivo']) : false;
+$archivo = $doc ? realpath(dirname(__DIR__, 2) . '/' . $doc['ruta_archivo']) : false;
 if (!$base || !$archivo || strpos($archivo, $base . DIRECTORY_SEPARATOR) !== 0 || !is_file($archivo)) {
     http_response_code(404);
     exit('Archivo no encontrado.');
