@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../config/funciones.php';
+require_once __DIR__ . '/funciones.php';
 
 $db = bd();
 $st = $db->prepare("SELECT ct.numero_contrato, ct.fecha_generacion, ct.fecha_firma, ct.condiciones, ct.estado,

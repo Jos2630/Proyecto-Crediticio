@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../../config/funciones.php';
-require_once __DIR__ . '/../../config/plantilla.php';
+require_once __DIR__ . '/funciones.php';
+require_once __DIR__ . '/plantilla.php';
 
 $db = bd();
 $q = trim((string)($_GET['q'] ?? ''));
@@ -33,7 +33,7 @@ $sql = "SELECT c.id_solicitud, c.numero_credito, c.monto_aprobado, c.saldo_actua
         JOIN cliente cl ON cl.id_cliente = s.id_cliente
         JOIN tipo_credito tc ON tc.id_tipo_credito = s.id_tipo_credito
         LEFT JOIN contrato ct ON ct.id_credito = c.id_credito
-        WHERE  1=1";
+        WHERE 1 = 1";
 $params = [];
 if ($q !== '') {
     $sql .= " AND (c.numero_credito LIKE ? OR cl.ci LIKE ? OR CONCAT(cl.nombres, ' ', cl.apellidos) LIKE ?)";

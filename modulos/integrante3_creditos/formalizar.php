@@ -1,7 +1,6 @@
 <?php
-require_once __DIR__ . '/../../config/funciones.php';
-require_once __DIR__ . '/../../config/plantilla.php';
-
+require_once __DIR__ . '/funciones.php';
+require_once __DIR__ . '/plantilla.php';
 
 $db = bd();
 $idSolicitud = (int)($_GET['id_solicitud'] ?? 0);

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../config/funciones.php';
+require_once __DIR__ . '/funciones.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { header('Location: menu_principal.php'); exit; }
 

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../config/funciones.php';
+require_once __DIR__ . '/funciones.php';
 
 $st = bd()->prepare('SELECT nombre_archivo, ruta_archivo FROM documento_garantia WHERE id_documento_garantia = ?');
 $st->execute([(int)($_GET['id'] ?? 0)]);
